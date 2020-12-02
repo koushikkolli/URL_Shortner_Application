@@ -118,6 +118,7 @@ app.post("/register", async (req, res) => {
         let result = await db.collection("users").insertOne(reqData);
         data = await db.collection("users").findOne({ email: req.body.email });
         mailOptions.to = req.body.email
+        mailOptions.subject = "Activation mail"
         let activateURL = process.env.activateURL
         activateURL = activateURL+"?id="+data._id+"&ac="+randomString
         let resultMail = activateMail
