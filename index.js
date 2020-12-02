@@ -196,7 +196,7 @@ app.post("/register", async (req, res) => {
       let client = await mongodb.connect(url);
       let db = client.db("url_db");
       let data = await db.collection("users").findOne({ _id: objectId(req.body.objectId) });
-      if (data.randomString === req.body.randomString) {
+      if (data.activateString === req.body.randomString) {
         let activation = {isActivated : "true"}
         await db.collection("students").findOneAndUpdate({_id: objectId(req.params.id)}, {$set :activation})
         res.status(200).json({ message: "Verification success" });
