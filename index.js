@@ -119,7 +119,7 @@ app.post("/register", async (req, res) => {
         data = await db.collection("users").findOne({ email: req.body.email });
         mailOptions.to = req.body.email
         let activateURL = process.env.activateURL
-        activateURL = activateURL+"?id="+data._id+"&ac="+salt
+        activateURL = activateURL+"?id="+data._id+"&ac="+randomString
         let resultMail = activateMail
         resultMail = resultMail.replace("urlToBeReplaced", activateURL)
         resultMail = resultMail.replace("urlToBeReplaced", activateURL)
@@ -192,7 +192,6 @@ app.post("/register", async (req, res) => {
 
   app.post("/activate_account", async (req, res) => {
     try {
-      console.log(req.body)
       let client = await mongodb.connect(url);
       let db = client.db("url_db");
       let data = await db.collection("users").findOne({ _id: objectId(req.body.objectId) });
