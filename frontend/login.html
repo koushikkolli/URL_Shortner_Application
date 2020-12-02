@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>URL Shortner</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="login-page" id="loginPageId">
+            <div class="form">
+              <form class="d-none" id="registerformId">
+                <h1 style="margin-bottom: 30px;color:  #4CAF50;"><b>Sign Up</b></h1>
+                <input type="text" placeholder="first name" id="registerFirstNameId" required>
+                <input type="text" placeholder="last name" id="registerLastNameId" required>
+                <input type="text" placeholder="email address" id="registerEmaiId" required>
+                <input type="password" placeholder="password" id="registerPasswordId" required>
+                <button type="submit">create</button>
+                <p class="message">Already registered? <a href="#" onclick="onAlreadyRegistered()">Sign In</a></p>
+              </form>
+              <form class="" id="loginFormId">
+                <h1 style="margin-bottom: 30px;color:  #4CAF50;"><b>Log In</b></h1>
+                <input type="text" placeholder="username" id="loginEmailId" required>
+                <input type="password" placeholder="password" id="loginPasswordId" required>
+                <p class="message" style="margin-top: 10px;">Forgot password? <a href="#" onclick="onResetPassword()">Reset password</a></p>
+                <button style="margin-top: 10px;" type="submit">login</button>
+                <p class="message">Not registered? <a href="#" onclick="onCreateAccount()">Create an account</a></p>
+              </form>
+              <form class="d-none" id="resetFormId">
+                <h3 style="margin-bottom: 30px;color:  #4CAF50;"><b>Password Reset</b></h3>
+                <input type="text" placeholder="username" id="resetEmailId" required>
+                <button style="margin-top: 10px;" type="submit">Reset</button>
+                <p class="message">Want to sign in? <a href="#" onclick="onSignIn()">Sign In</a></p>
+              </form>
+            </div>
+          </div>
+          <a class="d-none" href="shorten.html" id="shortenPageLinkId"></a>
+    </body>
+    <script src="script.js"></script>
+    
+    
+</html> 

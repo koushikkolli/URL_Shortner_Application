@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>URL Shortner</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="login-page d-none" id="shortenPageId">
+            <div class="form">
+              <form id="longformId">
+                <h1 style="margin-bottom: 30px;color:  #4CAF50;"><b>Shorten URL</b></h1>
+                <input type="text" id="longURLId" placeholder="Long URL" id="registerNameId" required>
+                <div class="input-group d-none" id="shortURLId">
+                    <input class="form-control" id="shortURLValueId">
+                    <span class="input-group-btn">
+                        <button onclick="onCopy()" style="height: 36px;margin: 0px 5px 5px 5px; padding-top: 8px;padding-bottom: 10px;"class="btn btn-info">copy</button>
+                    </span>
+                </div>
+                <button type="submit">submit</button>
+                <button style="margin-top: 15px;" id="homeButtonId">home</button>
+            </form>
+            </div>
+          </div>
+          <div class="login-page" id="homePageId">
+              <div class="form">
+                <form id="openformId">
+                    <h1 style="margin-bottom: 30px;color:  #4CAF50;"><b>Shorten URL</b></h1>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title"><b>URL's Shrinked</b></h5>
+                          <table style="text-align: center;" class="table table-dark">
+                              <thead>
+                                  <tr>
+                                      <th width="50%">
+                                        In a day
+                                      </th>
+                                      <th>
+                                        In 30 days
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td id="pastOnedayId">
+                                        0
+                                      </td>
+                                      <td id="pastThirtydayId">
+                                        0
+                                      </td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    <button style="margin-top: 15px;" id="shrinkButtonId">Shrink</button>
+                  </form>
+              </div>
+          </div>
+    </body>
+    <script src="shorten.js"></script>
+    
+    
+</html> 
