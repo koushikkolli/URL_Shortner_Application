@@ -192,6 +192,7 @@ app.post("/register", async (req, res) => {
 
   app.post("/activate_account", async (req, res) => {
     try {
+      console.log(req.body)
       let client = await mongodb.connect(url);
       let db = client.db("url_db");
       let data = await db.collection("users").findOne({ _id: objectId(req.body.objectId) });
