@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors())
 dotenv.config()
 
-const url = 'mongodb://localhost:27017';
+const url = process.env.DB_URL || 'mongodb://localhost:27017';
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
