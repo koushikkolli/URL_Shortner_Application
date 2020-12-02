@@ -163,7 +163,6 @@ app.post("/register", async (req, res) => {
       }
       client.close();
     } catch (error) {
-      console.log(error)
       res.status(500).json({
           message: "Internal Server Error"
       });
@@ -231,7 +230,7 @@ app.post("/register", async (req, res) => {
       else{
         await db.collection("url_collection").insertOne({long_url: longURL});
         data = await db.collection("url_collection").findOne({ long_url : longURL });
-        let shortURL = process.env.baseURL + "&id=" + btoa(data._id)
+        let shortURL = process.env.baseURL + "?id=" + btoa(data._id)
         let currentDate = new Date()
         let count_data = {ping_time: new Date(currentDate.toISOString())}
         await db.collection("count_ping").insertOne(count_data);
